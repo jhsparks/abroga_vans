@@ -2,22 +2,40 @@ import Image from 'next/image'
 
 const builds = [
   {
-    src: '/images/build-interior.png',
-    alt: 'Interior of a finished camper van conversion with walnut cabinetry, butcher block galley, and slatted ceiling',
-    title: 'The Laurel',
-    spec: '170" Sprinter · 600Ah · Full galley',
+    src: '/images/2019_sprinter_interior.png',
+    alt: 'Interior of a finished camper van conversion with cabinetry, butcher block galley, and slatted ceiling',
+    title: 'The Billy Goat',
+    spec: '170" Sprinter · 300Ah · Half galley',
   },
   {
-    src: '/images/build-electrical.png',
-    alt: 'Camper van electrical bay with lithium batteries, inverter, and neatly loomed labeled wiring on a plywood panel',
-    title: 'Bay 04 Electrical',
-    spec: 'Victron 3kVA · 400Ah lithium',
+    src: '/images/counter.png',
+    alt: 'Close-up of a camper van galley with butcher block countertop',
+    title: 'Billy Goat Galley',
+    spec: '170" Sprinter · 300Ah · Half galley',
   },
   {
-    src: '/images/build-exterior.png',
-    alt: 'Black Ford Transit camper van with roof solar and all-terrain tires parked on a forest road at dusk',
-    title: 'The Ridgeline',
-    spec: 'Transit AWD · Solar 800W · Diesel heat',
+    src: '/images/2019_sprinter_bed.png',
+    alt: 'Bed of the Billy Goat camper van conversion with a slatted ceiling and marine-grade 12V electrical system.',
+    title: 'The Billy Goat Bedroom',
+    spec: '170" Sprinter · 300Ah · Half galley',
+  },
+  {
+    src: '/images/shop.jpg',
+    alt: 'Interior of the Abroga Vans shop with a camper van conversion in progress',
+    title: 'Abroga Vans Shop',
+    spec: '170" Sprinter · 300Ah · Half galley',
+  },
+  {
+    src: '/images/2006_sprinter_wall.png',
+    alt: 'Interior of a 2006 Sprinter with a custom wall panel',
+    title: '2006 Sprinter Wall Partition',
+    spec: '158" Sprinter · 700Ah · Full galley',
+  },
+  {
+    src: '/images/2006_sprinter_back.png',
+    alt: 'Interior of a 2006 Sprinter with a full size countertop galley and marine-grade 12V electrical system',
+    title: '2006 Sprinter Rear',
+    spec: '158" Sprinter · 700Ah · Full galley',
   },
 ]
 

@@ -4,8 +4,8 @@ const specs = [
   {
     icon: Zap,
     title: 'Marine-Grade Electrical',
-    body: 'Victron Energy 3,000W inverters, smart lithium battery banks, and custom pre-loomed wiring harnesses built for continuous off-grid load.',
-    points: ['Victron 3kVA inverter/charger', 'Smart lithium banks', 'Pre-loomed harnesses'],
+    body: 'Xantrex Energy 3,000W inverters, smart lithium battery banks, and custom pre-loomed wiring harnesses built for continuous off-grid load.',
+    points: ['Xantrex inverters / Outback Chargers', 'Smart lithium banks', 'Pre-loomed harnesses'],
   },
   {
     icon: Ruler,

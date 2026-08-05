@@ -8,7 +8,7 @@ export function SiteFooter() {
           © {new Date().getFullYear()} Abroga Vans. All rights reserved.
         </p>
 
-        <nav aria-label="Social" className="flex items-center gap-5">
+        <nav aria-label="Social" className="hidden items-center gap-5">
           <a
             href="#"
             className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -26,7 +26,7 @@ export function SiteFooter() {
         </nav>
 
         <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[0.7rem] tracking-[0.16em] text-primary uppercase">
-          Crafted in PA
+          Crafted in East Greenville, PA
         </span>
       </div>
     </footer>

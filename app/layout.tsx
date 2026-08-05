@@ -8,7 +8,7 @@ const _archivo = Archivo({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Abroga Vans | Custom Off-Grid Camper Van Conversions',
   description:
-    'Bespoke Mercedes Sprinter and Ford Transit camper van conversions with marine-grade 12V electrical systems, professional cabinetry, and off-grid climate and water systems. Crafted in PA.',
+    'Bespoke Mercedes Sprinter and Ford Transit camper van conversions with marine-grade 12V electrical systems, professional cabinetry, and off-grid climate and water systems. Crafted in East Greenville, PA.',
   generator: 'v0.app',
   icons: {
     icon: [
