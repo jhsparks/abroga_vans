@@ -19,12 +19,30 @@ const timelines = ['Immediately', '1-3 Months', '3-6 Months']
 const budgets = ['$25,000 - $35,000', '$35,000 - $50,000', '$50,000+']
 
 export function IntakeForm() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
+    'idle',
+  )
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setStatus('sending')
-    setTimeout(() => setStatus('sent'), 900)
+
+    const form = event.currentTarget
+    const data = Object.fromEntries(new FormData(form).entries())
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) throw new Error('Request failed')
+
+      setStatus('sent')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -197,6 +215,13 @@ export function IntakeForm() {
                   className="w-full resize-y rounded-lg border border-input bg-background/60 p-3 text-sm leading-relaxed text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary focus:ring-3 focus:ring-primary/25"
                 />
               </div>
+
+              {status === 'error' && (
+                <p role="alert" className="text-sm text-destructive">
+                  Something went wrong sending your request. Please try again
+                  or email us directly.
+                </p>
+              )}
 
               <Button
                 type="submit"
