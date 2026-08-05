@@ -47,7 +47,11 @@ export async function onRequestPost(context) {
       }),
     });
 
-    if (!resendResponse.ok) throw new Error("Failed to send email");
+    if (!resendResponse.ok) {
+        const detail = await resendResponse.text();
+        console.log("Resend error:", resendResponse.status, detail);
+        throw new Error(`Resend failed: ${resendResponse.status} ${detail}`);
+    }
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,

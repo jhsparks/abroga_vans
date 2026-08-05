@@ -219,7 +219,7 @@ export function IntakeForm() {
               {status === 'error' && (
                 <p role="alert" className="text-sm text-destructive">
                   Something went wrong sending your request. Please try again
-                  or email us directly.
+                  or email us directly at abrogavans@gmail.com.
                 </p>
               )}
 
