@@ -44,8 +44,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark bg-background">
-      <body className="font-sans antialiased">
-        <Script id="meta-pixel" strategy="afterInteractive">
+      <head>
+        {/* beforeInteractive renders this script into <head>, as required by Meta Pixel */}
+        <Script id="meta-pixel" strategy="beforeInteractive">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -68,6 +69,8 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+      </head>
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>
