@@ -4,6 +4,12 @@ import { useState } from 'react'
 import { CircleCheck, LoaderCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void
+  }
+}
+
 const fieldClasses =
   'h-11 w-full rounded-lg border border-input bg-background/60 px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary focus:ring-3 focus:ring-primary/25'
 
@@ -39,6 +45,7 @@ export function IntakeForm() {
 
       if (!response.ok) throw new Error('Request failed')
 
+      window.fbq?.('track', 'Lead')
       setStatus('sent')
     } catch {
       setStatus('error')
