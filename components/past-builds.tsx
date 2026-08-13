@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const builds = [
   {
-    src: '/images/2019_sprinter_interior.png',
+    src: '/images/2019_sprinter_interior.jpg',
     alt: 'Interior of a finished camper van conversion with cabinetry, butcher block galley, and slatted ceiling',
     title: 'The Billy Goat',
     spec: '170" Sprinter · 300Ah · Half galley',
