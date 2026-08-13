@@ -8,13 +8,13 @@ const builds = [
     spec: '170" Sprinter · 300Ah · Half galley',
   },
   {
-    src: '/images/counter.png',
+    src: '/images/counter.jpg',
     alt: 'Close-up of a camper van galley with butcher block countertop',
     title: 'Billy Goat Galley',
     spec: '170" Sprinter · 300Ah · Half galley',
   },
   {
-    src: '/images/2019_sprinter_bed.png',
+    src: '/images/2019_sprinter_bed.jpg',
     alt: 'Bed of the Billy Goat camper van conversion with a slatted ceiling and marine-grade 12V electrical system.',
     title: 'The Billy Goat Bedroom',
     spec: '170" Sprinter · 300Ah · Half galley',
