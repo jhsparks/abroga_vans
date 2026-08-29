@@ -18,11 +18,66 @@ const labelClasses =
 
 const ownership = [
   'Yes - Mercedes Sprinter',
-  'Yes - Ford Transit / RAM Promaster',
+  'Yes - Ford Transit',
+  'Yes - RAM Promaster',
   'No - Need help sourcing',
 ]
 const timelines = ['Immediately', '1-3 Months', '3-6 Months']
-const budgets = ['$25,000 - $35,000', '$35,000 - $50,000', '$50,000+']
+const budgets = ['$20,000 - $25,000', '$25,000 - $35,000', '$35,000 - $50,000', '$50,000+']
+
+const packages = [
+  'The Weekender - $20,000',
+  'The Explorer - $25,000',
+  'The Basecamp - $35,000',
+  'Not sure yet - Need guidance',
+]
+
+const addOnGroups = [
+  {
+    label: 'Climate & Comfort',
+    options: [
+      'Webasto/Espar Air Heater',
+      'Roof-Mount AC + 750Ah Battery Upgrade',
+      'Roof-Mount Evaporative Cooler + 500Ah Upgrade',
+      'Seat Swivels',
+    ],
+  },
+  {
+    label: 'Plumbing & Bathroom',
+    options: [
+      'Outdoor Shower',
+      'Drinking Water Filter',
+      'Cassette Toilet',
+      'Incinerator Toilet',
+      'Composting Toilet',
+    ],
+  },
+  {
+    label: 'Electrical & Tech',
+    options: [
+      'DC-DC Alternator Charging',
+      '12V DC Smart TV on Swivel Mount',
+      'RV-Specific Microwave',
+      'Backup Camera',
+    ],
+  },
+  {
+    label: 'Exterior',
+    options: ['Added Windows'],
+  },
+]
+
+const usStates = [
+  'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado',
+  'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho',
+  'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
+  'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+  'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey',
+  'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio',
+  'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
+  'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia',
+  'Washington', 'West Virginia', 'Wisconsin', 'Wyoming',
+]
 
 export function IntakeForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
@@ -34,7 +89,9 @@ export function IntakeForm() {
     setStatus('sending')
 
     const form = event.currentTarget
-    const data = Object.fromEntries(new FormData(form).entries())
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData.entries())
+    data.addOns = formData.getAll('addOns').join(', ')
 
     try {
       const response = await fetch('/api/contact', {
@@ -207,6 +264,78 @@ export function IntakeForm() {
                       </option>
                     ))}
                   </select>
+                </div>
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="package" className={labelClasses}>
+                    Desired Package
+                  </label>
+                  <select
+                    id="package"
+                    name="package"
+                    required
+                    defaultValue=""
+                    className={fieldClasses}
+                  >
+                    <option value="" disabled>
+                      Select one
+                    </option>
+                    {packages.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="state" className={labelClasses}>
+                    What State Do You Live In?
+                  </label>
+                  <select
+                    id="state"
+                    name="state"
+                    required
+                    defaultValue=""
+                    className={fieldClasses}
+                  >
+                    <option value="" disabled>
+                      Select one
+                    </option>
+                    {usStates.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                <span className={labelClasses}>Add-Ons (Optional)</span>
+                <div className="grid gap-5 rounded-lg border border-border bg-background/40 p-4 sm:grid-cols-2">
+                  {addOnGroups.map((group) => (
+                    <fieldset key={group.label} className="flex flex-col gap-2.5">
+                      <legend className="mb-1 font-mono text-[0.65rem] font-semibold tracking-[0.14em] text-primary uppercase">
+                        {group.label}
+                      </legend>
+                      {group.options.map((option) => (
+                        <label
+                          key={option}
+                          className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground"
+                        >
+                          <input
+                            type="checkbox"
+                            name="addOns"
+                            value={option}
+                            className="mt-0.5 size-4 shrink-0 rounded border-input accent-primary"
+                          />
+                          <span>{option}</span>
+                        </label>
+                      ))}
+                    </fieldset>
+                  ))}
                 </div>
               </div>
 

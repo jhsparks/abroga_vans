@@ -6,7 +6,7 @@ function escapeHtml(value) {
 
 export async function onRequestPost(context) {
   try {
-    const { name, email, phone, van, timeline, budget, notes } =
+    const { name, email, phone, van, state, timeline, budget, package: pkg, addOns, notes } =
       await context.request.json();
 
     if (!name || !email) {
@@ -21,8 +21,11 @@ export async function onRequestPost(context) {
       ["Email", email],
       ["Phone", phone],
       ["Owns a van", van],
+      ["State", state],
       ["Timeline", timeline],
       ["Budget", budget],
+      ["Desired Package", pkg],
+      ["Add-Ons", addOns],
       ["Notes", notes],
     ]
       .filter(([, value]) => value)
