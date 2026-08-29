@@ -29,6 +29,7 @@ const tiers = [
       'Everything in The Weekender, plus:',
       'Upgrade to 500Ah battery bank',
       'Integrated plumbing: cold water sink with fresh & gray tanks',
+      'Single burner induction cooktop',
       'Mass-loaded sound deadening',
       'DC-DC alternator charging',
     ],
