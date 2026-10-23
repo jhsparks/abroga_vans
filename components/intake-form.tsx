@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void
+    gtag?: (...args: unknown[]) => void
   }
 }
 
@@ -103,6 +104,9 @@ export function IntakeForm() {
       if (!response.ok) throw new Error('Request failed')
 
       window.fbq?.('track', 'Lead')
+      window.gtag?.('event', 'generate_lead', {
+        lead_source: 'website_form',
+      })
       setStatus('sent')
     } catch {
       setStatus('error')
