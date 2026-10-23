@@ -4,6 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 
 const META_PIXEL_ID = '3504134416411159'
+const GA_ID = 'G-7K0MF21DKV'
 
 const _inter = Inter({ subsets: ['latin'] })
 const _archivo = Archivo({ subsets: ['latin'] })
@@ -45,6 +46,20 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark bg-background">
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="beforeInteractive"
+        />
+        <Script id="google-analytics" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
         {/* beforeInteractive renders this script into <head>, as required by Meta Pixel */}
         <Script id="meta-pixel" strategy="beforeInteractive">
           {`
