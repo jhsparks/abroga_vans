@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Archivo, Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
+import { applySeoOverrides, SiteJsonLd } from '@/lib/seo'
 
 const META_PIXEL_ID = '3504134416411159'
 const GA_ID = 'G-7K0MF21DKV'
@@ -9,7 +10,7 @@ const GA_ID = 'G-7K0MF21DKV'
 const _inter = Inter({ subsets: ['latin'] })
 const _archivo = Archivo({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: 'Abroga Vans | Custom Off-Grid Camper Van Conversions',
   description:
     'Bespoke Mercedes Sprinter and Ford Transit camper van conversions with marine-grade 12V electrical systems, professional cabinetry, and off-grid climate and water systems. Crafted in East Greenville, PA.',
@@ -33,6 +34,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const metadata: Metadata = applySeoOverrides(baseMetadata)
+
 export const viewport: Viewport = {
   colorScheme: 'dark',
   themeColor: '#0f172a',
@@ -46,6 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark bg-background">
       <head>
+        <SiteJsonLd />
         {/* Google tag (gtag.js) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}

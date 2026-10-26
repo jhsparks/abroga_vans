@@ -1,0 +1,59 @@
+{
+  "home": {
+    "title": "Abroga Vans | Custom Off-Grid Camper Van Conversions",
+    "description": "Bespoke Mercedes Sprinter and Ford Transit camper van conversions with marine-grade 12V electrical systems and professional cabinetry.",
+    "canonical": "/"
+  },
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://abrogavans.com/#organization",
+      "name": "Abroga Vans",
+      "url": "https://abrogavans.com/",
+      "description": "Bespoke Mercedes Sprinter and Ford Transit camper van conversions with marine-grade 12V electrical systems, professional cabinetry, and off-grid climate and water systems. Crafted in East Greenville, PA.",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "knowsAbout": [
+        "Custom campervan conversions",
+        "Off-grid electrical systems",
+        "Campervan build planning",
+        "Mercedes-Benz Sprinter camper van conversions",
+        "Ford Transit camper van conversions"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom campervan conversions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Off-grid electrical systems"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Campervan build planning"
+          }
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "East Greenville",
+        "addressRegion": "PA",
+        "addressCountry": "US"
+      }
+    }
+  ]
+}

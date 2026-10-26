@@ -1,4 +1,5 @@
 import { Camera, Play } from 'lucide-react'
+import { SeoPageLinks } from '@/lib/seo'
 
 export function SiteFooter() {
   return (
@@ -24,6 +25,8 @@ export function SiteFooter() {
             YouTube
           </a>
         </nav>
+
+        <SeoPageLinks />
 
         <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[0.7rem] tracking-[0.16em] text-primary uppercase">
           Crafted in East Greenville, PA
