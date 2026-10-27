@@ -37,7 +37,7 @@ export function Hero() {
           <div className="flex items-center gap-2.5 pt-2 text-sm text-muted-foreground">
             <ShieldCheck className="size-4 text-primary" aria-hidden="true" />
             <span className="font-mono text-xs tracking-wide uppercase">
-              100% Client-Funded • Built to RVIA/NFPA Safety Standards
+              100% Client-Funded
             </span>
           </div>
         </div>
