@@ -82,11 +82,6 @@ export function PricingTiers() {
                 <h3 className="font-display text-lg font-bold tracking-tight">
                   {tier.name}
                 </h3>
-                {tier.featured && (
-                  <span className="rounded-full bg-primary px-2.5 py-1 font-mono text-[0.65rem] font-bold tracking-[0.15em] text-primary-foreground uppercase">
-                    Most Built
-                  </span>
-                )}
               </div>
 
               <div className="flex flex-col gap-1">
