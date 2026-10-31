@@ -21,7 +21,7 @@ const ownership = [
   'Yes - Mercedes Sprinter',
   'Yes - Ford Transit',
   'Yes - RAM Promaster',
-  'No - Need help sourcing',
+  'No, I need help searching for one',
 ]
 const timelines = ['Immediately', '1-3 Months', '3-6 Months']
 const budgets = ['$20,000 - $25,000', '$25,000 - $35,000', '$35,000 - $50,000', '$50,000+']

@@ -7,7 +7,7 @@ const steps = [
   {
     step: '02',
     title: 'Component Sourcing',
-    body: 'Procurement of wholesale appliances, solar, and chassis upgrades at builder pricing.',
+    body: 'Procurement of wholesale appliances and solar at builder pricing.',
   },
   {
     step: '03',

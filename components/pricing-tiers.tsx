@@ -45,7 +45,7 @@ const tiers = [
       'Upgrade to 750Ah battery bank',
       'Hot water system routed to sink & shower',
       'Custom indoor wet bath/shower',
-      'Webasto/Espar cabin heater',
+      'Optional Webasto or Espar cabin heater',
     ],
     cta: 'Talk to a Builder',
   },
