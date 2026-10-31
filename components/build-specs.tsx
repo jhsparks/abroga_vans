@@ -4,8 +4,8 @@ const specs = [
   {
     icon: Zap,
     title: 'Marine-Grade Electrical',
-    body: 'Xantrex Energy 3,000W inverters, smart lithium battery banks, and custom pre-loomed wiring harnesses built for continuous off-grid load.',
-    points: ['Xantrex inverters / Outback Chargers', 'Smart lithium banks', 'Pre-loomed harnesses'],
+    body: 'Smart lithium battery banks and custom pre-loomed wiring harnesses built for continuous off-grid load. A build can include a Xantrex inverter.',
+    points: ['Options like Xantrex inverters and Outback chargers', 'Smart lithium banks', 'Pre-loomed harnesses'],
   },
   {
     icon: Ruler,
@@ -33,8 +33,8 @@ export function BuildSpecs() {
             Built like equipment, not furniture.
           </h2>
           <p className="text-base leading-relaxed text-muted-foreground text-pretty">
-            Every system is specified, documented, and load-tested before the
-            keys go back in your hand.
+            Every system is specified and documented before the keys go back in
+            your hand.
           </p>
         </div>
 
