@@ -67,21 +67,3 @@ export function JsonLd({ data }: { data?: JsonLdData[] }) {
 export function SiteJsonLd() {
   return <JsonLd data={SITE.jsonld} />
 }
-
-export function SeoPageLinks() {
-  const pages = getSeoPages()
-  if (pages.length === 0) return null
-  return (
-    <nav aria-label="Guides" className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-      {pages.map((page) => (
-        <a
-          key={page.slug}
-          href={`/${page.slug}`}
-          className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          {page.label}
-        </a>
-      ))}
-    </nav>
-  )
-}
