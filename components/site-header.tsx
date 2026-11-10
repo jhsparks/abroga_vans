@@ -33,14 +33,25 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Button
-          render={<a href="/#intake" />}
-          nativeButton={false}
-          size="lg"
-          className="h-10 px-5 text-sm font-semibold tracking-wide"
-        >
-          Start Your Build
-        </Button>
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <Button
+            render={<a href="/learn" />}
+            nativeButton={false}
+            variant="outline"
+            size="lg"
+            className="h-10 px-3 text-sm font-semibold tracking-wide sm:px-5"
+          >
+            Learn
+          </Button>
+          <Button
+            render={<a href="/#intake" />}
+            nativeButton={false}
+            size="lg"
+            className="h-10 px-3 text-sm font-semibold tracking-wide sm:px-5"
+          >
+            Start Your Build
+          </Button>
+        </div>
       </div>
     </header>
   )
